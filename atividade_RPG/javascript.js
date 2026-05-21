@@ -22,8 +22,14 @@ document.getElementById("nome-hero").textContent = hero.nome;
 document.getElementById("titulo-hero").textContent = hero.titulo
 document.getElementById("nome-boss").textContent = boss.nome;
 document.getElementById("titulo-boss").textContent = boss.titulo
+let containnerBtn =document.getElementById("controles");
 let listahabilidades = [
-    new habilidade(1, "🗡️ataque", 4, 0, 0)
-    new habilidade(2"☀️skill", 8, 10, 0)
-    new habilidade(3"🦑especial"15, 0, 100)
+    new habilidade(1, "🗡️ataque", 4, 0, 0),
+    new habilidade(2,"☀️skill", 8, 10, 0),
+    new habilidade(3,"🦑especial",15, 0, 100)
 ];
+listahabilidades.forEach(hab => {
+    let btn = document.createElement("button");//<button>
+    btn.innerText = hab.nome;
+    containnerBtn.appendChild(btn);
+});
