@@ -8,23 +8,25 @@ class personagem {
     }
     hero_ataca(alvo, habilidade) {
         if (this.mana >= habilidade.custo
-            && this.energia >= habilidade.energia) { alvo.hp = alvo.hp - habilidade.dano; 
-                if(habilidade.custo > 0){this.mana-= habilidade.custo
-this.energia += 50;
-                }
-                //sebitar a emergia
-                if(habilidade.energia > 0){
-this.energia= 0
-                }
-            } else {
+            && this.energia >= habilidade.energia) {
+            alvo.hp = alvo.hp - habilidade.dano;
+            if (habilidade.custo > 0) {
+                this.mana -= habilidade.custo
+                this.energia += 50;
+            }
+            //sebitar a emergia
+            if (habilidade.energia > 0) {
+                this.energia = 0
+            }
+        } else {
             return "sem mana ou energia otario";
         }
-    } 
-    boss_ataca(alvo){
-        if(this.energia>=100){
-            alvo.hp-= 15
-            this.energia=0
-        }else{this.energia+= 50}
+    }
+    boss_ataca(alvo) {
+        if (this.energia >= 100) {
+            alvo.hp -= 15
+            this.energia = 0
+        } else { this.energia += 50 }
     }
 }
 class habilidade {
@@ -54,12 +56,32 @@ listahabilidades.forEach(hab => {
     btn.classList.add("btn", "btn-primary")
     containnerBtn.appendChild(btn);
     btn.onclick = () => {
-        hero.hero_ataca(boss,hab);
+        hero.hero_ataca(boss, hab);
+        boss.boss_ataca(hero);
         atualizartela()
     }
 });
-const atualizartela = () =>{
-    document.getElementById("hp-boss").value=boss.hp;
+const atualizartela = () => {
+    document.getElementById("hp-boss").value = boss.hp;
     document.getElementById("mp-hero").value = hero.mana
-    document.getElementById("mega-hero").value= hero.energia
+    document.getElementById("mega-hero").value = hero.energia
+    document.getElementById("hphero").value = hero.hp
+    document.getElementById("mp-boss").value = boss.energia
+
+    if (hero.hp <= 0) {
+        game_over();
+    }
+     if (boss.hp <= 0) {
+        win();
+    }
+}
+async function game_over() {
+    const resposta = await fetch('game_over.html')
+    const htmlContent = await resposta.text();
+    document.getElementById('tela').innerHTML = htmlContent
+}
+    async function win() {
+    const resposta = await fetch('win.html')
+    const htmlContent = await resposta.text();
+    document.getElementById('tela').innerHTML = htmlContent
 }
