@@ -2,65 +2,71 @@
 
 <head>
     <title>anime fruit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <div style="background-color: rgb(20, 20, 20);"></div>
-    <header>anime fruit</header>
-    <p>Colhendo os melhores animes para você</p>
-    <img src="banner.png" width="1200" height="500">
-    <nav>
-        <a href="#">inicio</a>
-        <a href="#">catalogo</a>
-        <a href="#">temas</a>
-    </nav>
-    <h2>animes do momento</h2>
-    <ul>
-        <li>one piece</li>
-        <li>dragon ball z heroes</li>
-        <li>jujutsu kaizen</li>
-    </ul>
-    <h2>catalogo</h2>
-    <table border="1">
-        <tr>
-            <th>anime</th>
-            <th>temporada</th>
-            <th>autor</th>
-        </tr>
-        <tr>
-            <td>jojo bizarre adventure</td>
-            <td>7 temporadas</td>
-            <td>hirohiko araki</td>
-        </tr>
-        <tr>
-            <td>bleach</td>
-            <td>13 temporadas</td>
-            <td>tite Kubo</td>
-        </tr>
-        <tr>
-            <td>pokemon alola</td>
-            <td>2 temporadas</td>
-            <td>Satoshi Tajiri</td>
-    </table>
+
+    <div class="conteiner">
+        <header class="bg-black text-white text-center p-4">
+            <img src="banner.png" width="600"> <p>Colhendo os melhores animes para você</p>
+            ANIME FRUIT</header>
+        
+       
+        
+        <nav class="navbar bg-secondary">
+            <a href="#" class="nav-link link-light">inicio</a>
+            <a href="#" class="nav-link link-light">catalogo</a>
+            <a href="#" class="nav-link link-light">temas</a>
+        </nav>
+        <h2>animes do momento</h2>
+        <ul class="list-group">
+            <li class="list-group-item active">one piece</li>
+            <li class="list-group-item">dragon ball z heroes</li>
+            <li class="list-group-item">jujutsu kaizen</li>
+        </ul>
+        <h2>catalogo</h2>
+        <table class="table" border="1">
+            <tr>
+                <th>anime</th>
+                <th>temporada</th>
+                <th>autor</th>
+            </tr>
+            <tr>
+                <td>jojo bizarre adventure</td>
+                <td>7 temporadas</td>
+                <td>hirohiko araki</td>
+            </tr>
+            <tr>
+                <td>bleach</td>
+                <td>13 temporadas</td>
+                <td>tite Kubo</td>
+            </tr>
+            <tr>
+                <td>pokemon alola</td>
+                <td>2 temporadas</td>
+                <td>Satoshi Tajiri</td>
+        </table>
     </div>
     <h2>assinar</h2>
-    <form >
+    <form>
         <label>nome completo:</label>
         <input type="text">
         <p></p>
-        <label >tipo de assinatura</label>
-        <input type="radio" name="a"> basico 
-        <input type="radio" name="a"> premiun R$29.90
+        <label>tipo de assinatura</label>
+        <input type="radio" name="a"> basico
+        <input type="radio" name="a"> premiun 
         <p></p>
         <label ">mensal ou anual</label>
-        <input type="radio" name="b">mensal basico R$19.90
-        <input type="radio" name="b">anual basico R$199.00
-        <input type="radio" name="b">mensal premiun 29.90
-        <input type="radio" name="b">anual premiun 299.00
+        <input type=" radio" name="b">mensal basico R$19.90
+            <input type="radio" name="b">anual basico R$199.00
+            <input type="radio" name="b">mensal premiun 29.90
+            <input type="radio" name="b">anual premiun 299.00
     </form>
     <footer>
-        <p> anime fruits ©️  📞 61 9999-9999</p>
+        <p> anime fruits ©️ 📞 61 9999-9999</p>
     </footer>
+    </div>
 </body>
 
 </html>
